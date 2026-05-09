@@ -1,0 +1,585 @@
+{
+  "snapshots": [
+    {
+      "date": "2026-05-05",
+      "audit_day": 7,
+      "drafts_status_counts": {
+        "published": 21,
+        "cancelled": 1,
+        "rejected": 5,
+        "scaffold": 2,
+        "superseded": 2,
+        "held": 4,
+        "pending": 1
+      },
+      "published_today": [
+        {
+          "id": "9388022f",
+          "type": "single",
+          "head": "30-day public audit. Day 7.  Korean builder. 156 followers. ",
+          "url": null
+        },
+        {
+          "id": "7c349185",
+          "type": "single",
+          "head": "5 Korean words Western tech keeps reinventing badly.  Used b",
+          "url": null
+        },
+        {
+          "id": "ef2146f1",
+          "type": "single",
+          "head": "30-day public audit. Day 7 / 30.  Korean builder. 164 follow",
+          "url": null
+        },
+        {
+          "id": "729436fb",
+          "type": "single",
+          "head": "입하 (May 5 – May 20). Summer begins.  In Korean farming, this",
+          "url": null
+        },
+        {
+          "id": "9154dd55",
+          "type": "single",
+          "head": "Starting from 164 followers. Going to 1M. Writing it down ev",
+          "url": null
+        }
+      ],
+      "pending_now": [
+        {
+          "id": "faa672fb",
+          "scheduled_at": null,
+          "head": "Starting from 164 followers. Going to 1M. Writing "
+        }
+      ],
+      "scaffolds_created_today": 4,
+      "almanac_drops_today": 1,
+      "incoming_today": {
+        "likes": 87,
+        "follows": 68,
+        "replies": 0,
+        "verified_actor_count": 13,
+        "verified_actor_handles": [
+          "Diana_Osire",
+          "FredKSchott",
+          "LinghuaJ",
+          "ModengSir",
+          "TrueOrWh",
+          "bokibarum",
+          "cameraguyst",
+          "deforestpeg",
+          "lehmansohn",
+          "move78th",
+          "pawprintsdaily6",
+          "safishamsii",
+          "yclpaiva"
+        ]
+      },
+      "our_reactive_actions_today": {
+        "count": 0,
+        "by_action": {}
+      },
+      "strategic_follows_today": 0,
+      "last_trend_scan": "2026-05-04T11:48:50.029096+00:00",
+      "last_trend_targets": 38,
+      "article_curator_runs_today": 1,
+      "article_drafts_created_today": 3,
+      "almanac_runs_today": 1,
+      "followers": 164,
+      "followers_source": "carried-from-2026-05-05"
+    },
+    {
+      "date": "2026-05-06",
+      "audit_day": 8,
+      "drafts_status_counts": {
+        "published": 24,
+        "cancelled": 2,
+        "rejected": 5,
+        "scaffold": 6,
+        "superseded": 3,
+        "archived": 1,
+        "held": 2,
+        "pending": 5
+      },
+      "published_today": [
+        {
+          "id": "b6749f82",
+          "type": "single",
+          "head": "YC's stake in OpenAI is reportedly 0.6%.  The check at the s",
+          "url": null
+        },
+        {
+          "id": "a4fd1bce",
+          "type": "single",
+          "head": "A Korean creator hit 10K YouTube subs in 2 months using Clau",
+          "url": null
+        },
+        {
+          "id": "d807ab62",
+          "type": "single",
+          "head": "Pentagon pegged the Iran war cost at $25 billion. Operation ",
+          "url": null
+        }
+      ],
+      "pending_now": [
+        {
+          "id": "66cb28de",
+          "scheduled_at": "2026-05-06T22:32:00Z",
+          "head": "새벽. 안개.  10 workers fire while no one's awake. The"
+        },
+        {
+          "id": "293cc5a6",
+          "scheduled_at": "2026-05-07T00:58:00Z",
+          "head": "Software brain — go faster, do more, the unforgiva"
+        },
+        {
+          "id": "a598db85",
+          "scheduled_at": "2026-05-07T05:44:00Z",
+          "head": "A Japanese builder noted: Western Claude Code enth"
+        },
+        {
+          "id": "c8f8d47c",
+          "scheduled_at": "2026-05-07T13:41:00Z",
+          "head": "A new repo dropped: Voicebox. Open-source AI voice"
+        },
+        {
+          "id": "dde20148",
+          "scheduled_at": "2026-05-07T07:43:00Z",
+          "head": "Operation Epic Fury appears to be winding down.  M"
+        }
+      ],
+      "scaffolds_created_today": 4,
+      "almanac_drops_today": 1,
+      "incoming_today": {
+        "likes": 3,
+        "follows": 8,
+        "replies": 0,
+        "verified_actor_count": 1,
+        "verified_actor_handles": [
+          "cameraguyst"
+        ]
+      },
+      "our_reactive_actions_today": {
+        "count": 0,
+        "by_action": {}
+      },
+      "strategic_follows_today": 0,
+      "last_trend_scan": "2026-05-04T11:48:50.029096+00:00",
+      "last_trend_targets": 38,
+      "article_curator_runs_today": 1,
+      "article_drafts_created_today": 3,
+      "almanac_runs_today": 1,
+      "followers": 164,
+      "followers_source": "carried-from-2026-05-05"
+    },
+    {
+      "date": "2026-05-07",
+      "audit_day": 9,
+      "drafts_status_counts": {
+        "published": 35,
+        "cancelled": 2,
+        "rejected": 5,
+        "scaffold": 10,
+        "superseded": 3,
+        "archived": 1,
+        "held": 2,
+        "pending": 9,
+        "deleted": 1
+      },
+      "published_today": [
+        {
+          "id": "66cb28de",
+          "type": "single",
+          "head": "새벽. 안개.  10 workers fire while no one's awake. The work nobo",
+          "url": null
+        },
+        {
+          "id": "293cc5a6",
+          "type": "single",
+          "head": "Software brain — go faster, do more, the unforgivable mistak",
+          "url": null
+        },
+        {
+          "id": "a598db85",
+          "type": "single",
+          "head": "A Japanese builder noted: Western Claude Code enthusiasts ar",
+          "url": null
+        },
+        {
+          "id": "c8f8d47c",
+          "type": "single",
+          "head": "A new repo dropped: Voicebox. Open-source AI voice studio — ",
+          "url": null
+        },
+        {
+          "id": "dde20148",
+          "type": "single",
+          "head": "Operation Epic Fury appears to be winding down.  Most covera",
+          "url": null
+        },
+        {
+          "id": "80f1207c",
+          "type": "single",
+          "head": "ASML CEO told TechCrunch: \"no one is coming for us\" — about ",
+          "url": null
+        },
+        {
+          "id": "760e565b",
+          "type": "single",
+          "head": "A Korean creator explained the move that revived her dead Sh",
+          "url": null
+        },
+        {
+          "id": "e8f80ff5",
+          "type": "single",
+          "head": "DeepSeek hit a $45B valuation in its first investment round.",
+          "url": null
+        },
+        {
+          "id": "07b92e86",
+          "type": "single",
+          "head": "Claude reportedly integrated directly with Blender. Text pro",
+          "url": null
+        },
+        {
+          "id": "a86e1b7b",
+          "type": "single",
+          "head": "Anthropic's Global Policy Head, Michael Sellitto, visits Seo",
+          "url": null
+        },
+        {
+          "id": "c2075409",
+          "type": "single",
+          "head": "Voicebox dropped. K-drama dubbing pipelines: days → minutes.",
+          "url": null
+        }
+      ],
+      "pending_now": [
+        {
+          "id": "7d469d60",
+          "scheduled_at": "2026-05-07T22:08:00Z",
+          "head": "A new study: AI model out-diagnosed doctors in rea"
+        },
+        {
+          "id": "a05e198c",
+          "scheduled_at": "2026-05-07T21:14:00Z",
+          "head": "A Japanese creator just published their ad-revenue"
+        },
+        {
+          "id": "0edff330",
+          "scheduled_at": "2026-05-08T00:42:00Z",
+          "head": "Match Group is slowing US hires to pay AI bills.  "
+        },
+        {
+          "id": "bfe6c199",
+          "scheduled_at": "2026-05-08T04:27:00Z",
+          "head": "NPR reported a Chinese tech worker laid off and re"
+        },
+        {
+          "id": "bb8e8646",
+          "scheduled_at": "2026-05-08T07:08:00Z",
+          "head": "A Japanese builder shipped an open-source video ed"
+        },
+        {
+          "id": "430c9504",
+          "scheduled_at": "2026-05-08T09:42:00Z",
+          "head": "Wired covered a study: 10 minutes of AI use can re"
+        },
+        {
+          "id": "28dc5122",
+          "scheduled_at": "2026-05-08T13:38:00Z",
+          "head": "This week's timeline pattern: \"Solo builder cleare"
+        },
+        {
+          "id": "a596720f",
+          "scheduled_at": "2026-05-07T14:08:00Z",
+          "head": "reply > like in the algorithm. 1년 늦게 알았다.  오늘부터 다시"
+        },
+        {
+          "id": "e6a0adfe",
+          "scheduled_at": "2026-05-08T03:23:00Z",
+          "head": "입하 들어왔어요. 다음은 소만, 5월 21일.  씨 뿌린 게 자라기 시작하면, 제가 할 일"
+        }
+      ],
+      "scaffolds_created_today": 4,
+      "almanac_drops_today": 1,
+      "incoming_today": {
+        "likes": 20,
+        "follows": 12,
+        "replies": 0,
+        "verified_actor_count": 4,
+        "verified_actor_handles": [
+          "ArritosTechnolo",
+          "Karen19981106",
+          "Linhtailor2",
+          "nowlovepan"
+        ]
+      },
+      "our_reactive_actions_today": {
+        "count": 0,
+        "by_action": {}
+      },
+      "strategic_follows_today": 0,
+      "last_trend_scan": "2026-05-04T11:48:50.029096+00:00",
+      "last_trend_targets": 38,
+      "article_curator_runs_today": 1,
+      "article_drafts_created_today": 3,
+      "almanac_runs_today": 1,
+      "followers": 164,
+      "followers_source": "carried-from-2026-05-06"
+    },
+    {
+      "date": "2026-05-08",
+      "audit_day": 10,
+      "drafts_status_counts": {
+        "published": 45,
+        "cancelled": 3,
+        "rejected": 5,
+        "scaffold": 14,
+        "superseded": 3,
+        "archived": 1,
+        "held": 2,
+        "deleted": 1,
+        "pending": 5
+      },
+      "published_today": [
+        {
+          "id": "7d469d60",
+          "type": "single",
+          "head": "A new study: AI model out-diagnosed doctors in real ER patie",
+          "url": null
+        },
+        {
+          "id": "a05e198c",
+          "type": "single",
+          "head": "A Japanese creator just published their ad-revenue receipt. ",
+          "url": null
+        },
+        {
+          "id": "0edff330",
+          "type": "single",
+          "head": "Match Group is slowing US hires to pay AI bills.  Indies hav",
+          "url": null
+        },
+        {
+          "id": "bfe6c199",
+          "type": "single",
+          "head": "NPR reported a Chinese tech worker laid off and replaced by ",
+          "url": null
+        },
+        {
+          "id": "bb8e8646",
+          "type": "single",
+          "head": "A Japanese builder shipped an open-source video editor that ",
+          "url": null
+        },
+        {
+          "id": "430c9504",
+          "type": "single",
+          "head": "Wired covered a study: 10 minutes of AI use can reduce probl",
+          "url": null
+        },
+        {
+          "id": "28dc5122",
+          "type": "single",
+          "head": "This week's timeline pattern:  \"Solo builder cleared ¥30M wi",
+          "url": null
+        },
+        {
+          "id": "a596720f",
+          "type": "single",
+          "head": "Reply weighs more than like in the algorithm now.  A year la",
+          "url": null
+        },
+        {
+          "id": "c8e073bc",
+          "type": "single",
+          "head": "SpaceX just leased the entire Colossus 1 datacenter to Anthr",
+          "url": null
+        },
+        {
+          "id": "55e8d3ba",
+          "type": "single",
+          "head": "new bio: korean indie. mostly tweet when stuff breaks.  drop",
+          "url": null
+        }
+      ],
+      "pending_now": [
+        {
+          "id": "5e750b93",
+          "scheduled_at": "2026-05-08T21:38:00Z",
+          "head": "WiseTech said 2,000 software jobs are going. AI \"o"
+        },
+        {
+          "id": "93f08662",
+          "scheduled_at": "2026-05-09T01:23:00Z",
+          "head": "\"reply > like\" rule went live a year ago. i caught"
+        },
+        {
+          "id": "7f0405d6",
+          "scheduled_at": "2026-05-09T04:42:00Z",
+          "head": "morning polish: 0 posts. afternoon: picking 3 from"
+        },
+        {
+          "id": "8618d4b2",
+          "scheduled_at": "2026-05-09T08:14:00Z",
+          "head": "Bumble's killing the swipe after a decade.  The wh"
+        },
+        {
+          "id": "b560ee4e",
+          "scheduled_at": "2026-05-09T11:38:00Z",
+          "head": "Perplexity Personal Computer is free for all Mac u"
+        }
+      ],
+      "scaffolds_created_today": 4,
+      "almanac_drops_today": 1,
+      "incoming_today": {
+        "likes": 12,
+        "follows": 17,
+        "replies": 0,
+        "verified_actor_count": 5,
+        "verified_actor_handles": [
+          "Linhtailor2",
+          "cnnctai",
+          "curious_queue",
+          "jamiepine",
+          "nowlovepan"
+        ]
+      },
+      "our_reactive_actions_today": {
+        "count": 0,
+        "by_action": {}
+      },
+      "strategic_follows_today": 0,
+      "last_trend_scan": "2026-05-04T11:48:50.029096+00:00",
+      "last_trend_targets": 38,
+      "article_curator_runs_today": 1,
+      "article_drafts_created_today": 3,
+      "almanac_runs_today": 1,
+      "followers": 164,
+      "followers_source": "carried-from-2026-05-07"
+    },
+    {
+      "date": "2026-05-09",
+      "audit_day": 11,
+      "drafts_status_counts": {
+        "published": 56,
+        "cancelled": 5,
+        "rejected": 5,
+        "scaffold": 18,
+        "superseded": 3,
+        "archived": 1,
+        "held": 2,
+        "deleted": 1,
+        "pending": 3
+      },
+      "published_today": [
+        {
+          "id": "5e750b93",
+          "type": "single",
+          "head": "WiseTech said 2,000 software jobs are going. AI \"outperforms",
+          "url": null
+        },
+        {
+          "id": "93f08662",
+          "type": "single",
+          "head": "\"reply > like\" rule went live a year ago. i caught up 6 days",
+          "url": null
+        },
+        {
+          "id": "7f0405d6",
+          "type": "single",
+          "head": "morning polish: 0 posts. afternoon: picking 3 from the queue",
+          "url": null
+        },
+        {
+          "id": "8618d4b2",
+          "type": "single",
+          "head": "Bumble's killing the swipe after a decade.  The whole thing ",
+          "url": null
+        },
+        {
+          "id": "b560ee4e",
+          "type": "single",
+          "head": "Perplexity Personal Computer is free for all Mac users now. ",
+          "url": null
+        },
+        {
+          "id": "84b98c8f",
+          "type": "single",
+          "head": "stole /opusplan from @sousa_brothers opus plans, sonnet exec",
+          "url": null
+        },
+        {
+          "id": "fed36009",
+          "type": "quote",
+          "head": "@levelsio just walked through his stack. nginx, ubuntu, cron",
+          "url": null
+        },
+        {
+          "id": "206fd124",
+          "type": "single",
+          "head": "Show HN today — full python GUI in browser. no javascript. n",
+          "url": null
+        },
+        {
+          "id": "b57e66b6",
+          "type": "single",
+          "head": "3-day ceasefire on russia-ukraine starts today. russia gets ",
+          "url": null
+        },
+        {
+          "id": "9219a8e2",
+          "type": "single",
+          "head": "70 days into iran war. food prices up 3 months straight. str",
+          "url": null
+        },
+        {
+          "id": "8cd54806",
+          "type": "single",
+          "head": "Claude for Excel, PowerPoint, Word — GA today. Outlook in pu",
+          "url": null
+        }
+      ],
+      "pending_now": [
+        {
+          "id": "8bbb1462",
+          "scheduled_at": "2026-05-09T22:23:00Z",
+          "head": "Voi founders launched a new company in Stockholm. "
+        },
+        {
+          "id": "fe352520",
+          "scheduled_at": "2026-05-10T01:08:00Z",
+          "head": "started writing specs before every model call last"
+        },
+        {
+          "id": "7d777a01",
+          "scheduled_at": "2026-05-10T12:08:00Z",
+          "head": "Cloudflare cut 1,100 jobs this week. AI made the r"
+        }
+      ],
+      "scaffolds_created_today": 4,
+      "almanac_drops_today": 1,
+      "incoming_today": {
+        "likes": 2,
+        "follows": 18,
+        "replies": 0,
+        "verified_actor_count": 1,
+        "verified_actor_handles": [
+          "baggyut54351150"
+        ]
+      },
+      "our_reactive_actions_today": {
+        "count": 0,
+        "by_action": {}
+      },
+      "strategic_follows_today": 0,
+      "last_trend_scan": "2026-05-04T11:48:50.029096+00:00",
+      "last_trend_targets": 38,
+      "article_curator_runs_today": 1,
+      "article_drafts_created_today": 3,
+      "almanac_runs_today": 1,
+      "followers": 164,
+      "followers_source": "carried-from-2026-05-08"
+    }
+  ]
+}

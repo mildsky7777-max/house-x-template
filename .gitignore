@@ -1,0 +1,43 @@
+.venv/
+.chrome-profile/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+*.cron.log
+
+# Personal data
+auto/drafts.json
+auto/drafts.json.bak*
+auto/auto_engaged.json
+auto/curated.json
+auto/engagement.json
+auto/followed_blitz.json
+auto/following_snapshot.json
+auto/login_verified.png
+auto/notification_tracker.log
+auto/scheduler.log
+
+# House personal
+house/library/feed/
+house/library/likes/
+house/library/digest/
+house/library/x_trends/
+house/library/evolution/
+house/library/by_jeolgi/
+house/library/by_room/
+house/library/X_orbit/
+house/library/.warden_*
+house/library/.digest_*
+house/library/.x_trends*
+house/library/.evolution*
+house/library/.likes*
+house/failover_log.json
+house/polisher_log.json
+house/article_seen.json
+house/article_curator_log.json
+
+# Personal voice studies
+house/voice/exemplars_*.md
+house/voice/mildsky_own_posts.md
+house/voice/neighbors_discovery.json

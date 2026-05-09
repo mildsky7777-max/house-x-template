@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>X Draft Queue</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+    background: #f4f5f7;
+    color: #0f1419;
+    padding-bottom: 80px;
+  }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: #fff; border-bottom: 1px solid #e1e4e8;
+    padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;
+  }
+  header h1 { margin: 0; font-size: 17px; font-weight: 700; }
+  header .stats { font-size: 13px; color: #536471; }
+  .container { max-width: 600px; margin: 0 auto; padding: 16px; }
+  .draft {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .draft.pending { border-left: 4px solid #1d9bf0; }
+  .draft.approved { border-left: 4px solid #f5a623; }
+  .draft.publishing { border-left: 4px solid #f5a623; opacity: 0.6; }
+  .draft.published { border-left: 4px solid #00ba7c; opacity: 0.55; }
+  .draft.failed { border-left: 4px solid #f4212e; }
+  .draft.rejected { opacity: 0.4; }
+
+  .meta { display: flex; gap: 8px; align-items: center; font-size: 12px; color: #536471; margin-bottom: 8px; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    background: #eff3f4; font-weight: 600; font-size: 11px; text-transform: uppercase;
+  }
+  .badge.single { background: #cfe9fb; color: #0c5a8a; }
+  .badge.reply { background: #d6f0e0; color: #0a6e3a; }
+  .badge.quote { background: #f0d6f0; color: #6e0a6e; }
+  .text { font-size: 15px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; }
+  .target {
+    margin-top: 8px; font-size: 12px; color: #1d9bf0;
+    word-break: break-all; text-decoration: none;
+  }
+  .actions {
+    display: flex; gap: 8px; margin-top: 14px;
+  }
+  button {
+    flex: 1; padding: 12px; border: none; border-radius: 999px;
+    font-size: 14px; font-weight: 700; cursor: pointer;
+    transition: opacity 0.15s, transform 0.05s;
+    -webkit-appearance: none;
+  }
+  button:active { transform: scale(0.98); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .approve { background: #1d9bf0; color: #fff; }
+  .approve:hover { background: #1a8cd8; }
+  .reject { background: #fff; color: #f4212e; border: 1px solid #f4212e; }
+  .edit { background: #fff; color: #0f1419; border: 1px solid #cfd9de; }
+
+  .error { color: #f4212e; font-size: 12px; margin-top: 8px; padding: 8px; background: #fff0f0; border-radius: 6px; }
+  .empty { text-align: center; padding: 60px 20px; color: #536471; }
+
+  textarea.editor {
+    width: 100%; min-height: 140px; padding: 12px;
+    border: 1px solid #cfd9de; border-radius: 10px;
+    font-family: inherit; font-size: 14px; line-height: 1.5;
+    resize: vertical;
+  }
+  .url-input {
+    width: 100%; padding: 8px 12px; margin-top: 8px;
+    border: 1px solid #cfd9de; border-radius: 8px;
+    font-size: 13px;
+  }
+  .ts { font-size: 11px; color: #536471; }
+  .toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: #0f1419; color: #fff; padding: 12px 20px; border-radius: 999px;
+    font-size: 14px; z-index: 100; opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>X Queue</h1>
+  <div class="stats" id="stats">—</div>
+</header>
+
+<div class="container" id="list">
+  <div class="empty">Loading…</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (s, root=document) => root.querySelector(s);
+const list = $("#list");
+const stats = $("#stats");
+const toast = $("#toast");
+
+let drafts = [];
+let editingId = null;
+
+function showToast(msg, ms=1800) {
+  toast.textContent = msg;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), ms);
+}
+
+function relTime(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  const diff = Math.floor((Date.now() - d.getTime()) / 1000);
+  if (diff < 60) return diff + "s ago";
+  if (diff < 3600) return Math.floor(diff / 60) + "m ago";
+  if (diff < 86400) return Math.floor(diff / 3600) + "h ago";
+  return Math.floor(diff / 86400) + "d ago";
+}
+
+function render() {
+  if (!drafts.length) {
+    list.innerHTML = '<div class="empty">No drafts yet.<br>Claude will populate this queue.</div>';
+    stats.textContent = "0";
+    return;
+  }
+  const counts = { pending: 0, published: 0, failed: 0, rejected: 0 };
+  drafts.forEach(d => { counts[d.status] = (counts[d.status] || 0) + 1; });
+  stats.textContent = `${counts.pending} pending · ${counts.published} sent · ${counts.failed||0} failed`;
+
+  list.innerHTML = drafts.map(d => {
+    const isEditing = d.id === editingId;
+    const targetHtml = d.target_url ? `<a class="target" href="${d.target_url}" target="_blank">${d.target_url}</a>` : "";
+    const errorHtml = d.error ? `<div class="error">⚠ ${d.error}</div>` : "";
+    let body = "";
+    if (isEditing) {
+      body = `
+        <textarea class="editor" id="edit-${d.id}">${escapeHtml(d.text)}</textarea>
+        ${d.type !== "single" ? `<input class="url-input" id="url-${d.id}" value="${escapeHtml(d.target_url||"")}" placeholder="target URL">` : ""}
+      `;
+    } else {
+      body = `<div class="text">${escapeHtml(d.text)}</div>${targetHtml}`;
+    }
+    let actions = "";
+    if (d.status === "pending") {
+      if (isEditing) {
+        actions = `
+          <button class="reject" onclick="cancelEdit()">Cancel</button>
+          <button class="approve" onclick="saveEdit('${d.id}')">Save</button>
+        `;
+      } else {
+        actions = `
+          <button class="reject" onclick="reject('${d.id}')">Reject</button>
+          <button class="edit" onclick="startEdit('${d.id}')">Edit</button>
+          <button class="approve" onclick="approve('${d.id}')">Send</button>
+        `;
+      }
+    } else if (d.status === "publishing") {
+      actions = `<button disabled>Publishing…</button>`;
+    } else if (d.status === "failed") {
+      actions = `
+        <button class="reject" onclick="reject('${d.id}')">Reject</button>
+        <button class="edit" onclick="startEdit('${d.id}')">Edit</button>
+        <button class="approve" onclick="republish('${d.id}')">Retry</button>
+      `;
+    } else if (d.status === "published") {
+      actions = `<button disabled>✓ Sent</button>`;
+    } else if (d.status === "rejected") {
+      actions = `<button disabled>Rejected</button>`;
+    }
+    return `
+      <div class="draft ${d.status}" data-id="${d.id}">
+        <div class="meta">
+          <span class="badge ${d.type}">${d.type}</span>
+          <span class="ts">${relTime(d.created_at)}</span>
+          ${d.tags && d.tags.length ? `<span class="ts">· ${d.tags.join(", ")}</span>` : ""}
+        </div>
+        ${body}
+        ${errorHtml}
+        <div class="actions">${actions}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+function escapeHtml(s) {
+  return (s||"").replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+
+async function load() {
+  const r = await fetch("/api/drafts");
+  const j = await r.json();
+  drafts = j.drafts || [];
+  render();
+}
+
+async function approve(id) {
+  if (!confirm("Send this to X?")) return;
+  showToast("Publishing…");
+  const r = await fetch("/api/approve/" + id, {method:"POST"});
+  const j = await r.json();
+  if (j.ok) showToast("✓ Sent");
+  else showToast("✗ " + (j.draft?.error || "Failed"), 4000);
+  await load();
+}
+
+async function reject(id) {
+  const r = await fetch("/api/reject/" + id, {method:"POST"});
+  if (r.ok) showToast("Rejected");
+  await load();
+}
+
+function startEdit(id) {
+  editingId = id;
+  render();
+}
+
+function cancelEdit() {
+  editingId = null;
+  render();
+}
+
+async function saveEdit(id) {
+  const text = $(`#edit-${id}`).value;
+  const urlEl = $(`#url-${id}`);
+  const payload = { text };
+  if (urlEl) payload.target_url = urlEl.value;
+  await fetch("/api/edit/" + id, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(payload),
+  });
+  editingId = null;
+  showToast("Saved");
+  await load();
+}
+
+async function republish(id) {
+  await fetch("/api/republish/" + id, {method:"POST"});
+  await approve(id);
+}
+
+load();
+setInterval(load, 15000);
+</script>
+</body>
+</html>
