@@ -187,3 +187,22 @@ MIT. Take it. Fork it. Replace placeholders. Ship.
 Korean indie going for 100K+ from one laptop. Day 12 receipt below ↓
 
 [link to launch thread once 5/15]
+
+## Receipts
+
+Sample output of the running stack — actual screenshots from day 12.
+
+### Heartbeat status (every 30 min)
+![heartbeat](docs/screenshots/heartbeat.png)
+
+### Drafts queue
+![drafts](docs/screenshots/drafts.png)
+
+### Experiment log (engagement scoring)
+![experiment](docs/screenshots/experiment_top.png)
+
+### Evolution capture (orbit accounts)
+![evolution](docs/screenshots/evolution_tail.png)
+
+### For You feed capture
+![for_you](docs/screenshots/for_you_tail.png)
