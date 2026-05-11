@@ -46,12 +46,12 @@ def load_banned_phrases() -> list[str]:
 # Stamps that close a post in our voice
 STAMP_PATTERNS = [
     r"korean builder,?\s+(day\s*\d+|in public|taking notes)",
-    r"day\s*\d+\s*from\s*YOUR_LOCATION",
+    r"day\s*\d+\s*from\s*jeju",
     r"day\s*\d+/\d+\b",
     r"korean\s+builder\s*\.",
 ]
 
-# AI-tell phrasing — the X viral list (Day 9 evening {USER} surfacing)
+# AI-tell phrasing — the X viral list (Day 9 evening 이지 surfacing)
 AI_TELLS = [
     # verbs
     "delve into",
@@ -156,7 +156,7 @@ KOREAN_TRANSLATIONESE = [
     "에도 불구하고",
 ]
 
-# Brand-banned consonant reactions (Day 9 evening {USER} critique)
+# Brand-banned consonant reactions (Day 9 evening 이지 critique)
 KOREAN_BANNED_REACTIONS = ["ㅋㅋ", "ㅎㅎ", "ㄷㄷ", "ㅠㅠ", "ㅜㅜ", "ㅗㅗ"]
 
 

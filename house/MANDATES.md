@@ -38,6 +38,126 @@ Form examples:
 
 ---
 
+## §0.10 REPLY DISCIPLINE + VISUAL + CROSS-PLATFORM (Day 12 — followers plateau fix)
+
+> {USER}: "팔로워 정체 분석 → 그럼 해."
+
+12일 정체 80% reason = reply discipline 0. Fix:
+
+### 1. Reply discipline (Day 12 evening — {USER} mandate "내 voice로 자연스럽게")
+
+**Hybrid system: 95% automated, 5% audit.**
+
+#### Capture (auto)
+- `~/x/grow/house/rituals/morning_reply_queue.md` — 매일 06:28 KST 자동 생성
+- Top 50 verified candidates + their latest post
+
+#### Draft + ship (auto, in polish cycles)
+매 polish cycle (morning 11:31, afternoon 15:32, evening 19:32) — 새 post drafting 외에 추가 mandate:
+- Reply queue 읽어서 5 candidates pick (rotate orbit, no same-person 1주일에 2번 X)
+- Each reply 1-3 lines, viral light voice, specific reference to their post body
+- ✅ 본인 receipt 박힘 ("12 days running stack", "M3 Max 96GB", "tested today")
+- ✅ Stance OR question OR weird affection
+- ❌ "Thanks for X!" / generic agreement / "love this!" 절대 금지
+- ❌ 같은 form 5번 반복 X (1 line + 3 line + question + receipt mix)
+- quality_gate 통과 → drafts.json type=reply target_url 박아 schedule
+- Scheduler 자동 fire
+
+매일 총 ~15 reply auto-ship (3 polish × 5 reply).
+
+#### Voice 자연스러움 rules
+- lowercase 자유
+- variable length (1, 2, 3 lines mix)
+- 본인 receipt embedding (avoid bare opinion)
+- specific phrase quote/reference from their post
+- self-mock 가끔
+- weird affection 가끔 ("i love quality gates" type)
+- never generic agreement
+
+#### {USER} audit (manual 5 min/day)
+매일 저녁 — 발행된 reply ~15개 빠르게 scroll
+- bad reply 발견 → delete (Playwright)
+- 패턴 발견 → mandate update
+- Daily not 30 min, 5 min only.
+
+매일 followers 추정 +20-50/day (현재 +0-1).
+
+### 2. Visual content (auto)
+- `~/x/grow/house/library/visuals/{date}/` — 매일 06:50 KST 자동 capture
+- heartbeat / drafts / experiment_top / evolution_tail / for_you_tail PNG
+- Polish task: 매일 1/3 posts에 visual attach (`media_path` in drafts.json)
+- X algorithm boost — text-only가 아닌 post
+
+### 3. Cross-platform (YouTube → X)
+- {USER} 운영 채널: AI 주간 브리핑 / Heartfelt Stories / Vanished Mysteries
+- 매주 1 X post = "this week's AI Weekly covered X. takeaway: [Y]. [video link]"
+- YouTube subscriber funnel → X
+- (build queue: youtube_cross_promote.py)
+
+### 4. Stack launch 5/15
+- Already on track. Single biggest 1회 lever.
+- Repo private → public flip + 8-tweet thread
+- Followers spike 1K-10K possible.
+
+---
+
+## §0.9 AUTORESEARCH LOOP (Day 12 — Karpathy pattern applied)
+
+> {USER} mandate: "@opensourcelab9 → karpathy AutoResearch — 우리한테 적용."
+
+Karpathy AutoResearch (https://github.com/karpathy/autoresearch):
+- AI agents run nanochat training on single GPU
+- Autonomous experiment → analysis → improvement cycle
+- Self-rewrites approach based on results
+
+**우리 적용 = X content AutoResearch loop:**
+
+```
+[polish cycle = experiment]
+  ↓ post hypotheses (form / topic / hook)
+  ↓ publish via scheduler
+  ↓
+[24h 후 = analysis]
+  ↓ engagement metrics scrape (replies, QT, bookmarks, impressions)
+  ↓ score per post
+  ↓
+[improvement = mandate update]
+  ↓ winning hypothesis → next cycle prompt 강화
+  ↓ losing hypothesis → drop or revise
+```
+
+### Implementation (build queue)
+
+1. **`engagement_analyzer.py`** worker — 24h 후 fired posts의 engagement Playwright scrape, 기록
+2. **`experiment_log.md`** — 매 post 어떤 hypothesis 박혔나 (form/topic/hour/length)
+3. **Weekly retro task 확장** — 한 주 experiment 결과 → mandate update proposal
+4. **Polish task 확장** — 매 cycle 시작에 last-week winners 읽고 hypothesis 짠다
+
+### 핵심 차이 (vs static mandate)
+- 이전: {USER} mandate → system 적용 → publish → 끝
+- 이후: {USER} mandate → system 적용 → publish → engagement → mandate auto-update → publish 강화
+
+이게 진짜 self-evolving. Constitution §0.4 Why mandate가 자아 awareness 라면, §0.9 AutoResearch가 외부 feedback awareness.
+
+---
+
+## §0.8 FOR YOU FEED MANDATE (Day 11 — {USER})
+
+> "내 x의 for you로 매뉴 보면 겁나 재밌고 유익한 정보들이 많아. 그것들처럼 똑같이 내 의견달고 포스트 해도 좋지 않을까?"
+
+매 polish cycle:
+1. **Read** `~/x/grow/house/library/for_you/{today}.md` (hourly capture by `for_you_scanner.py`, :43 KST)
+2. **Pick 1-2 high-signal posts** — algorithm 이미 신뢰 (verified accounts, AI builder / tool launch / cultural viral / world news)
+3. **Add {USER} stance** — viral light voice 1-line take
+4. **QT 또는 source URL** 박아 발행
+5. 즉시 schedule (TIMING mandate)
+
+For You feed = X 알고리즘이 {USER} history 기반 personalized 추천. 가장 strong signal source.
+
+매일 1+ post는 For You source 추천.
+
+---
+
 ## §0.7 TREND FOLLOW MANDATE (Day 11 — {USER})
 
 > "x에서 트렌드를 볼수 있는 기능이 있자나. 오늘 트렌드 및 인기 있는 것들을 볼수 있는 메뉴. 그걸 보고 우리도 그 방향에 맞는 기사를 포스트."
