@@ -11,7 +11,7 @@
 - [x] Launch thread v4 drafted
 - [ ] Repo polish — add 2-3 screenshots (terminal output, drafts.json, experiment_log.md)
 - [ ] CONTRIBUTING.md draft (light)
-- [ ] First friend fork test (이지 invite 1-2명 to private repo, check ONBOARDING flow)
+- [ ] First friend fork test ({USER} invite 1-2명 to private repo, check ONBOARDING flow)
 
 ### 5/11
 - [ ] Apply friend feedback

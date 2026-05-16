@@ -41,3 +41,24 @@ house/article_curator_log.json
 house/voice/exemplars_*.md
 house/voice/mildsky_own_posts.md
 house/voice/neighbors_discovery.json
+
+# Operational logs + state — never commit (personal run data)
+house/rituals/audit_log.*
+house/rituals/polish_log.md
+house/rituals/polish_session.md
+house/rituals/morning_briefing.md
+house/rituals/bio_candidates.md
+house/rituals/pinned_candidates.md
+house/rituals/tech_adoption_findings.md
+house/rituals/morning_reply_queue.md
+house/almanac/almanac_log.json
+house/teams/*/log.md
+house/code_audit_log.md
+house/daily_retro_log.md
+house/growth_strategy_log.md
+house/growth_log.jsonl
+house/experiment_log.md
+house/pending_decisions.json
+house/heartbeat.json
+house/.audit_check.json
+house/.growth_check.json

@@ -1,7 +1,7 @@
 """
 For You feed scanner — captures personalized algorithmic recommendations.
 
-이지 mandate Day 11: "내 x의 for you로 매뉴 보면 겁나 재밌고 유익한 정보들이 많아.
+{USER} mandate Day 11: "내 x의 for you로 매뉴 보면 겁나 재밌고 유익한 정보들이 많아.
 그것들처럼 똑같이 내 의견달고 포스트 해도 좋지 않을까?"
 
 For You feed = X 알고리즘이 mildsky 본인 history+orbit+interests 기반 personalized 추천.

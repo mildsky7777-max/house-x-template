@@ -1,5 +1,5 @@
 """
-Visual capture worker — Day 12 (이지 mandate "그럼 해").
+Visual capture worker — Day 12 ({USER} mandate "그럼 해").
 
 Daily 06:50 KST: capture visuals for the day's posts to draw on.
 Output: library/visuals/{date}/ — PNG files ready for media_path attach in drafts.json.

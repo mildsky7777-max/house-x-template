@@ -1,10 +1,10 @@
 """
-Reply queue worker — Day 12 (이지 mandate "그럼 해").
+Reply queue worker — Day 12 ({USER} mandate "그럼 해").
 
 Daily 06:30 KST: pull top-50 verified orbit accounts' latest post, draft a
 reply suggestion through quality_gate, output to morning_reply_queue.md.
 
-이지가 매일 30 min manual reply window 잡으면 — 후보 + suggestions 이미 준비됨.
+{USER}가 매일 30 min manual reply window 잡으면 — 후보 + suggestions 이미 준비됨.
 Reply discipline = 12-day plateau의 80% 원인 (followers gain의 가장 빠른 path).
 
 Cron: 28 6 * * *  (KST 06:28 — before morning polish 11:31)
@@ -135,7 +135,7 @@ def write_queue(items: list[dict]):
     now = datetime.now(KST)
     lines = [
         f"# Morning Reply Queue — {now.strftime('%Y-%m-%d %H:%M KST')}\n\n",
-        f"_이지 mandate: 매일 30 min reply window. 12-day plateau의 80% 원인 = reply discipline 0._\n\n",
+        f"_{USER} mandate: 매일 30 min reply window. 12-day plateau의 80% 원인 = reply discipline 0._\n\n",
         f"_{len(items)} candidates from orbit. Pick 5-10. Reply with viral light voice, specific to their post._\n\n",
         f"## How to use\n\n",
         f"1. 위에서 5-10개 골라 (verified + relevant 우선)\n",

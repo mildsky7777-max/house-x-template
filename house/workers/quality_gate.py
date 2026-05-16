@@ -51,7 +51,7 @@ STAMP_PATTERNS = [
     r"korean\s+builder\s*\.",
 ]
 
-# AI-tell phrasing — the X viral list (Day 9 evening 이지 surfacing)
+# AI-tell phrasing — the X viral list (Day 9 evening {USER} surfacing)
 AI_TELLS = [
     # verbs
     "delve into",
@@ -156,7 +156,7 @@ KOREAN_TRANSLATIONESE = [
     "에도 불구하고",
 ]
 
-# Brand-banned consonant reactions (Day 9 evening 이지 critique)
+# Brand-banned consonant reactions (Day 9 evening {USER} critique)
 KOREAN_BANNED_REACTIONS = ["ㅋㅋ", "ㅎㅎ", "ㄷㄷ", "ㅠㅠ", "ㅜㅜ", "ㅗㅗ"]
 
 

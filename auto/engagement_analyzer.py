@@ -1,7 +1,7 @@
 """
 Engagement analyzer — Karpathy AutoResearch pattern applied to X content.
 
-이지 mandate Day 12: "이 새로운 적용을 우리의 진화에 쓰라고 하는 거야."
+{USER} mandate Day 12: "이 새로운 적용을 우리의 진화에 쓰라고 하는 거야."
 
 Loop:
   publish (experiment) → 24h wait → engagement scrape (analysis)
